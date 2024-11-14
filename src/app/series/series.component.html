@@ -1,0 +1,40 @@
+<div class="container-fluid px-5">
+  <div class="row mt-4">
+    <div class="col-12 col-lg-6 px-4">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th class="text-center">#</th>
+              <th>Name</th>
+              <th>Channel</th>
+              <th>Seasons</th>
+            </tr>
+          </thead>
+          <tbody id="series" class="table-light">
+            <tr *ngFor="let c of series">
+              <td>
+                <dd class="text-center fw-bold">{{c.id}}</dd>
+              </td>
+              <td>
+                <dd><a href="#" class="link-offset-2 link-underline link-underline-opacity-0">{{c.name}}</a></dd>
+              </td>
+              <td>
+                <dd>{{c.channel}}</dd>
+              </td>
+              <td>
+                <dd>{{c.seasons}}</dd>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th class="p fw-medium text-center" colspan="3" scope="row">Seasons average:</th>
+              <td *ngIf="series.length > 0">{{averageSeasons}}</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
